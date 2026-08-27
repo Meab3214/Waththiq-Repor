@@ -1,5 +1,7 @@
 // V4.2 — premium single-page infographic report engine
 (function(){
+ if(!document.querySelector('link[href="./v42.css"]')){const l=document.createElement('link');l.rel='stylesheet';l.href='./v42.css';document.head.appendChild(l)}
+ const badge=document.querySelector('.side-intro .eyebrow');if(badge)badge.textContent='V4.2';document.title='توثيق — صانع التقارير الذكي V4.2';
  const E=n=>form.elements[n], has=n=>!!(E(n)&&String(E(n).value||'').trim()), V=n=>has(n)?String(E(n).value).trim():'', safe=s=>esc(String(s||'')), L=s=>lines(s||'');
  const statsData=()=>{let a=[];[['students','الطلاب',''],['femaleStudents','الطالبات',''],['teachers','المعلمون',''],['femaleTeachers','المعلمات',''],['beneficiaries','المستفيدون',''],['attendance','الحضور','%'],['satisfaction','الرضا','%'],['activities','الأنشطة',''],['target','المستهدف',''],['achieved','المتحقق','']].forEach(([n,l,u])=>{if(has(n)&&num(n)>0)a.push({l,v:num(n),u})});$$('.metric-name').forEach((m,i)=>{let x=Number($$('.metric-value')[i]?.value)||0;if(m.value.trim()&&x>0)a.push({l:m.value.trim(),v:x,u:''})});return a};
  function bullets(text){return L(text).map((x,i)=>`<div class="p-bullet"><i>${String(i+1).padStart(2,'0')}</i><span>${safe(x)}</span></div>`).join('')}
