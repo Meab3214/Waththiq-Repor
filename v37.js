@@ -67,6 +67,7 @@
     const sign=[]; if(filled('executor')) sign.push(`<span><small>منفذ البرنامج</small><b>${esc(val('executor'))}${filled('jobTitle')?` — ${esc(val('jobTitle'))}`:''}</b></span>`); if(filled('approver')) sign.push(`<span><small>الاعتماد</small><b>${esc(val('approver'))}</b></span>`);
     $('#reportPreview').className=`report theme-${theme}`; $('#reportPreview').style.transform=`scale(${zoom})`;
     $('#reportPreview').innerHTML=`<section class="report-sheet"><div class="report-inner"><header class="r-hero"><div class="r-brand-row"><img class="official-moe-logo" src="./moe-logo-official.png" alt="شعار وزارة التعليم"></div><div class="r-title-wrap"><h1>${esc(title)}</h1>${org.length?`<p>${org.map(esc).join(' • ')}</p>`:''}</div></header><main class="r-body">${facts}${buildContent()}${sign.length?`<div class="r-signatures">${sign.join('')}</div>`:''}<footer class="r-footer"><span>${esc(filled('school')?val('school'):(filled('authority')?val('authority'):'وزارة التعليم'))}</span></footer></main></div></section>`;
+    const official=$('#reportPreview .official-moe-logo'); if(official){official.style.filter='none';official.style.width='110px';official.style.height='auto';}
     $('#zoomText').textContent=Math.round(zoom*100)+'%';
     fitPage();
   };
