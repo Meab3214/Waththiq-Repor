@@ -1,14 +1,14 @@
-// V3.7 — one A4 page, conditional content, genuinely different templates, renamed product
+// V3.8 — one A4 page, supplied Ministry logo, cleaner report header
 (function(){
   const brand=document.querySelector('.brand');
   if(brand) brand.innerHTML='<span class="brand-mark">ت</span><div><strong>توثيق</strong><small>صانع التقارير الذكي</small></div>';
-  const tag=document.querySelector('.side-intro .eyebrow'); if(tag) tag.textContent='V3.7';
+  const tag=document.querySelector('.side-intro .eyebrow'); if(tag) tag.textContent='V3.8';
   const h=document.querySelector('.side-intro h1'); if(h) h.textContent='صمّم تقرير برنامج احترافي في صفحة واحدة.';
-  document.title='توثيق — صانع التقارير الذكي V3.7';
+  document.title='توثيق — صانع التقارير الذكي V3.8';
   const logoBox=document.querySelector('.upload-logo'); if(logoBox){
-    logoBox.innerHTML='<div><b>شعار وزارة التعليم</b><span>مرفق تلقائيًا بهوية الوزارة في جميع التقارير.</span></div><div id="logoPreview" class="logo-preview"><img src="./moe-logo.svg" alt="شعار وزارة التعليم"></div>';
+    logoBox.innerHTML='<div><b>شعار وزارة التعليم</b><span>مرفق تلقائيًا في جميع التقارير.</span></div><div id="logoPreview" class="logo-preview"><img src="./moe-logo-official.png" alt="شعار وزارة التعليم"></div>';
   }
-  logo='./moe-logo.svg';
+  logo='./moe-logo-official.png';
 
   function filled(n){const v=val(n); return v!==''&&v!==null&&v!==undefined;}
   function eText(t){return esc(t).replace(/\n/g,'<br>');}
@@ -62,12 +62,11 @@
   render=function(){
     const theme=form.elements.theme?.value||'aurora';
     const title=filled('title')?val('title'):'تقرير برنامج';
-    const type=filled('reportType')?val('reportType'):'تقرير برنامج';
     const org=[filled('authority')?val('authority'):'',filled('school')?val('school'):''].filter(Boolean);
     const facts=factCards();
     const sign=[]; if(filled('executor')) sign.push(`<span><small>منفذ البرنامج</small><b>${esc(val('executor'))}${filled('jobTitle')?` — ${esc(val('jobTitle'))}`:''}</b></span>`); if(filled('approver')) sign.push(`<span><small>الاعتماد</small><b>${esc(val('approver'))}</b></span>`);
     $('#reportPreview').className=`report theme-${theme}`; $('#reportPreview').style.transform=`scale(${zoom})`;
-    $('#reportPreview').innerHTML=`<section class="report-sheet"><div class="report-inner"><header class="r-hero"><div class="r-brand-row"><img src="./moe-logo.svg" alt="شعار وزارة التعليم"><span class="r-type">${esc(type)}</span></div><div class="r-title-wrap"><div class="r-kicker">صانع التقارير الذكي</div><h1>${esc(title)}</h1>${org.length?`<p>${org.map(esc).join(' • ')}</p>`:''}</div></header><main class="r-body">${facts}${buildContent()}${sign.length?`<div class="r-signatures">${sign.join('')}</div>`:''}<footer class="r-footer"><span>${esc(filled('school')?val('school'):(filled('authority')?val('authority'):'وزارة التعليم'))}</span><span>توثيق</span></footer></main></div></section>`;
+    $('#reportPreview').innerHTML=`<section class="report-sheet"><div class="report-inner"><header class="r-hero"><div class="r-brand-row"><img class="official-moe-logo" src="./moe-logo-official.png" alt="شعار وزارة التعليم"></div><div class="r-title-wrap"><h1>${esc(title)}</h1>${org.length?`<p>${org.map(esc).join(' • ')}</p>`:''}</div></header><main class="r-body">${facts}${buildContent()}${sign.length?`<div class="r-signatures">${sign.join('')}</div>`:''}<footer class="r-footer"><span>${esc(filled('school')?val('school'):(filled('authority')?val('authority'):'وزارة التعليم'))}</span></footer></main></div></section>`;
     $('#zoomText').textContent=Math.round(zoom*100)+'%';
     fitPage();
   };
