@@ -1,0 +1,90 @@
+/* Waththiq V3.2 — five genuinely different report directions */
+.report .page{isolation:isolate}
+.report .page:after{pointer-events:none}
+
+/* 01 Aurora — flowing infographic */
+.theme-aurora .cover-shape{height:430px;clip-path:path('M0 0H794V320C620 420 420 290 250 380C140 440 65 430 0 460Z')}
+.theme-aurora .hero-band{border-radius:36px 12px 36px 12px}
+.theme-aurora .info-strip>div{border-bottom:4px solid var(--second)}
+.theme-aurora .panel.accent{background:linear-gradient(145deg,#e8f6f3,#f9fffd)}
+
+/* 02 Editorial ministry — publication/poster inspired */
+.theme-editorial .page{--main:#08796f;--second:#c4aa7d;--soft:#f2efe8;background:linear-gradient(90deg,#fff 0 94%,#0b756c 94%)}
+.theme-editorial .cover{background:#fff}
+.theme-editorial .cover-shape{height:250px;clip-path:polygon(0 0,100% 0,100% 68%,72% 100%,0 82%);background:linear-gradient(135deg,#078578,#0b615a)}
+.theme-editorial .cover:after{content:'وثّق';position:absolute;left:-45px;bottom:155px;font-size:150px;font-weight:900;color:#0b756c0d;transform:rotate(-90deg)}
+.theme-editorial .cover-copy{margin-top:245px;border-right:9px solid var(--second);padding-right:24px}
+.theme-editorial .cover-copy h1{font-size:56px;max-width:580px}
+.theme-editorial .cover-feature{grid-template-columns:1.15fr .85fr 1fr}
+.theme-editorial .cover-feature>div{border-radius:0;border-top:0;border-right:5px solid var(--main);background:#f3f1ec}
+.theme-editorial .r-head{border:0;padding:0 0 12px;border-bottom:5px solid var(--main)}
+.theme-editorial .hero-band{background:transparent;color:var(--ink);padding:20px 0;border-radius:0;border-bottom:1px solid #d8d4c9}
+.theme-editorial .hero-band span{background:var(--main);color:#fff}
+.theme-editorial .hero-band h2{font-size:38px;color:var(--main)}
+.theme-editorial .hero-band p{color:#596c67}
+.theme-editorial .section-ribbon{border-radius:0 18px 18px 0;background:var(--main);padding-right:34px}
+.theme-editorial .two-blocks{grid-template-columns:1.2fr .8fr}
+.theme-editorial .panel{border-radius:0;border:0;border-top:5px solid var(--second);background:#f7f6f2}
+.theme-editorial .kpi{border-radius:0;background:#f0eee8;border-bottom:5px solid var(--main)}
+
+/* 03 Minimal — luxury annual report */
+.theme-minimal .page{--main:#243532;--second:#9caaa7;--soft:#f5f6f5;color:#1f2c29;background:#fff;padding:72px}
+.theme-minimal .cover-shape{display:none}
+.theme-minimal .cover-top{color:#263b36;border-bottom:1px solid #263b36;padding-bottom:22px}
+.theme-minimal .report-chip{border:1px solid #263b36;background:transparent}
+.theme-minimal .cover-copy{margin-top:210px;max-width:570px}
+.theme-minimal .cover-copy small{letter-spacing:2px}
+.theme-minimal .cover-copy h1{font-size:62px;font-weight:400;line-height:1.25}
+.theme-minimal .cover-feature{grid-template-columns:1fr;border-top:1px solid #d6dcda;padding-top:20px;gap:0}
+.theme-minimal .cover-feature>div{display:grid;grid-template-columns:140px 1fr;border:0;border-radius:0;background:transparent;padding:12px 0;border-bottom:1px solid #e3e7e6}
+.theme-minimal .r-head{border-bottom:1px solid #283b36}
+.theme-minimal .hero-band{background:#fff;color:#233531;border:1px solid #d8dfdd;border-radius:0;padding:32px}
+.theme-minimal .hero-band:after{display:none}
+.theme-minimal .hero-band span{background:#253a37;color:#fff}
+.theme-minimal .hero-band p{color:#66736f}
+.theme-minimal .info-strip{gap:0;border:1px solid #dce2e0}
+.theme-minimal .info-strip>div{border-radius:0;background:#fff;border-left:1px solid #dce2e0}
+.theme-minimal .panel,.theme-minimal .panel.accent{border-radius:0;background:#fff;border:1px solid #dce2e0}
+.theme-minimal .section-ribbon{background:transparent;color:#253a37;border:1px solid #253a37;border-radius:0}
+.theme-minimal .kpi{background:#fff;border:1px solid #dce2e0;border-radius:0}
+.theme-minimal .target-card{background:#263a36;border-radius:0}
+
+/* 04 Prism — analytical geometric */
+.theme-prism .page{--main:#155f79;--second:#56b8d0;--soft:#e9f5f8;background:linear-gradient(135deg,#fff 0 88%,#e7f5f8 88%)}
+.theme-prism .cover-shape{height:100%;clip-path:polygon(0 0,100% 0,100% 30%,78% 42%,100% 54%,100% 100%,88% 100%,66% 52%,39% 31%,0 43%);background:linear-gradient(150deg,#103c56,#1789a6 55%,#61c8da)}
+.theme-prism .cover-copy{margin-top:300px;width:62%;background:#fffffff2;padding:28px;border-radius:0 28px 0 28px;box-shadow:0 24px 70px #0d526b25}
+.theme-prism .cover-copy h1{font-size:43px}
+.theme-prism .cover-feature{grid-template-columns:repeat(3,1fr);width:76%}
+.theme-prism .cover-feature>div{border:0;border-radius:20px 4px 20px 4px;background:#e9f6fa}
+.theme-prism .r-head{border-bottom:4px solid var(--second)}
+.theme-prism .hero-band{clip-path:polygon(5% 0,100% 0,95% 100%,0 100%);border-radius:0;padding:28px 45px}
+.theme-prism .info-strip>div{border-radius:18px 3px 18px 3px}
+.theme-prism .panel{border-radius:24px 4px 24px 4px}
+.theme-prism .section-ribbon{clip-path:polygon(10% 0,100% 0,90% 100%,0 100%);border-radius:0;padding:10px 40px}
+.theme-prism .kpi{border-radius:22px 4px 22px 4px;box-shadow:inset 0 -4px 0 #55b9d1}
+.theme-prism .target-card{border-radius:30px 5px 30px 5px}
+
+/* 05 Impact — result-first dashboard poster */
+.theme-impact .page{--main:#087367;--second:#94b954;--soft:#edf5e8;background:#fbfdf9}
+.theme-impact .cover-shape{height:520px;clip-path:polygon(0 0,100% 0,100% 80%,84% 72%,67% 91%,43% 76%,20% 96%,0 83%);background:linear-gradient(140deg,#075e56,#0a8b78 60%,#95b753)}
+.theme-impact .cover-copy{margin-top:270px;background:#fff;padding:30px;border-radius:24px;box-shadow:0 22px 55px #193d3420}
+.theme-impact .cover-copy small{display:inline-block;background:#94b954;color:#fff;padding:7px 12px;border-radius:20px}
+.theme-impact .cover-feature>div{background:#fff;border:1px solid #dfe9da;border-top:0;border-bottom:6px solid var(--second)}
+.theme-impact .hero-band{background:#fff;color:#173a35;border:2px solid #e1eadb;padding-left:190px}
+.theme-impact .hero-band:before{content:'الأثر';position:absolute;left:28px;top:28px;width:120px;height:120px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--second) 0 76%,#e7eee3 76%);color:#fff;font-size:24px;font-weight:bold;border:10px solid #fff;box-shadow:0 5px 30px #23492d18}
+.theme-impact .hero-band p{color:#65766f}
+.theme-impact .kpis{gap:16px}
+.theme-impact .kpi{background:#fff;border:1px solid #dce8d5;border-radius:24px;box-shadow:0 12px 30px #405d2a0d}
+.theme-impact .ring{width:96px;height:96px;background:conic-gradient(var(--second) calc(var(--p)*1%),#e5eee0 0)}
+.theme-impact .target-card{background:linear-gradient(100deg,#0b6f65,#95b754);padding:28px}
+.theme-impact .panel.accent{background:linear-gradient(140deg,#eef5e8,#fff)}
+.theme-impact .section-ribbon{background:var(--second);color:#173a35}
+
+/* Evidence layouts should look like designed photo stories */
+.theme-editorial .gallery figure{border-radius:0}
+.theme-minimal .gallery figure{border-radius:0;background:#fff;border:1px solid #dce2e0}
+.theme-prism .gallery figure{border-radius:22px 4px 22px 4px}
+.theme-impact .gallery figure{border-radius:22px;background:#eef4e9}
+
+@media(max-width:1100px){body.preview-open .preview-panel{display:block!important}}
+@media print{.theme-editorial .page,.theme-prism .page{background-color:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
