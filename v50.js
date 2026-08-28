@@ -1,14 +1,12 @@
-// V8 bootstrap — keep the stable form workflow and load only the new report design engine last.
+// V9 bootstrap — preserve stable form workflow and activate the new reference-inspired report engine.
 (function(){
-  const oldCss=[...document.querySelectorAll('link[rel="stylesheet"]')].filter(x=>/v60|v70/.test(x.href));
-  oldCss.forEach(x=>x.remove());
+  [...document.querySelectorAll('link[rel="stylesheet"]')].filter(x=>/v60|v70|v80|v90/.test(x.href)).forEach(x=>x.remove());
   const css=document.createElement('link');
   css.rel='stylesheet';
-  css.href='./v80.css?v=80';
+  css.href='./v90.css?v=90';
   document.head.appendChild(css);
-
   const js=document.createElement('script');
-  js.src='./v80.js?v=80';
+  js.src='./v90.js?v=90';
   js.defer=false;
   document.body.appendChild(js);
 })();
