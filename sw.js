@@ -1,4 +1,4 @@
-const CACHE='tawtheeq-v150';
+const CACHE='tawtheeq-v160';
 const ASSETS=['./','./index.html','./styles.css','./v32.css','./v35.css','./v36.css','./v37.css','./v39.css','./v40.css','./v41.css','./v43.css','./v50.css','./v140.css','./v150.css','./app.js','./v33.js','./v35.js','./v36.js','./v37.js','./v39.js','./v40.js','./v41.js','./v43.js','./v50.js','./v140.js','./moe-logo-official.png','./manifest.webmanifest'];
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});
