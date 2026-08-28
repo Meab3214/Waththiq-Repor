@@ -15,7 +15,7 @@ const executor=()=>H('executor')||H('jobTitle')?`<div class="r13-executor">${H('
 const para=n=>H(n)?`<p>${esc(V(n)).replace(/\n/g,'<br>')}</p>`:'';
 const list=(text,cls='')=>lines(text).map((x,i)=>`<div class="r13-item ${cls}"><i>${String(i+1).padStart(2,'0')}</i><span>${esc(x)}</span></div>`).join('');
 const facts=()=>[
- ['reportType','نوع التقرير','▤'],['audience','الفئة المستهدفة','◉'],['date','تاريخ التنفيذ','◫'],
+ ['audience','الفئة المستهدفة','◉'],['date','تاريخ التنفيذ','◫'],
  ['duration','مدة التنفيذ','◷'],['location','مكان التنفيذ','⌖'],['beneficiaries','المستفيدون','◎']
 ].filter(([k])=>H(k)).map(([k,l,ic])=>({k,l,ic,v:V(k)}));
 function metricData(){
