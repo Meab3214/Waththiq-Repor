@@ -8,7 +8,7 @@ const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const lines=s=>String(s||'').split(/\n+/).map(x=>x.trim()).filter(Boolean);
 const photos=()=>typeof images!=='undefined'&&Array.isArray(images)?images:[];
 const title=()=>V('title')||'عنوان التقرير الرئيسي';
-const logo=()=>'<img class="v9-logo" src="./moe-logo-official.png?v=90" onerror="this.src=\'./moe-logo.svg?v=90\'" alt="وزارة التعليم">';
+const logo=()=>'<img class="v9-logo" src="./moe-logo-official.png?v=130" alt="وزارة التعليم">';
 const ident=()=>`<div class="v9-ident">${logo()}<div>${H('authority')?`<small>${esc(V('authority'))}</small>`:''}${H('school')?`<b>${esc(V('school'))}</b>`:''}</div></div>`;
 const stamp=()=>'<div class="v9-stamp"><b>توثيق</b><span>تعليم</span></div>';
 const person=()=>H('executor')||H('jobTitle')?`<div class="v9-person">${H('jobTitle')?`<small>${esc(V('jobTitle'))}</small>`:''}${H('executor')?`<b>${esc(V('executor'))}</b>`:''}</div>`:'';
