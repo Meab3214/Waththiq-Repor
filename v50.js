@@ -1,10 +1,8 @@
-// V11 bootstrap — preserve report logic, activate supplied-reference visual direction and ornaments.
+// V12 bootstrap — load the five supplied-reference report designs directly.
 (function(){
-  [...document.querySelectorAll('link[rel="stylesheet"]')].filter(x=>/v60|v70|v80|v90|v100|v110/.test(x.href)).forEach(x=>x.remove());
-  const css9=document.createElement('link');css9.rel='stylesheet';css9.href='./v90.css?v=111';document.head.appendChild(css9);
-  const css11=document.createElement('link');css11.rel='stylesheet';css11.href='./v110.css?v=111';document.head.appendChild(css11);
-  const js9=document.createElement('script');js9.src='./v90.js?v=111';js9.async=false;document.body.appendChild(js9);
-  js9.addEventListener('load',()=>{
-    const js11=document.createElement('script');js11.src='./v110.js?v=111';js11.async=false;document.body.appendChild(js11);
-  });
+ [...document.querySelectorAll('link[rel="stylesheet"]')].filter(x=>/v60|v70|v80|v90|v100|v110|v120/.test(x.href)).forEach(x=>x.remove());
+ const base=document.createElement('link');base.rel='stylesheet';base.href='./v90.css?v=120';document.head.appendChild(base);
+ const visual=document.createElement('link');visual.rel='stylesheet';visual.href='./v120.css?v=120';document.head.appendChild(visual);
+ const engine=document.createElement('script');engine.src='./v90.js?v=120';engine.async=false;document.body.appendChild(engine);
+ engine.addEventListener('load',()=>{const ui=document.createElement('script');ui.src='./v120.js?v=120';ui.async=false;document.body.appendChild(ui);});
 })();
